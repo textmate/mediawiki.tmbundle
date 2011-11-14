@@ -44,10 +44,6 @@
 		<string>wikipedia</string>
 		<string>wiki</string>
 	</array>
-	<key>foldingStartMarker</key>
-	<string>&lt;[^/]|{\|</string>
-	<key>foldingStopMarker</key>
-	<string>&lt;/|\|}</string>
 	<key>keyEquivalent</key>
 	<string>^~M</string>
 	<key>name</key>
