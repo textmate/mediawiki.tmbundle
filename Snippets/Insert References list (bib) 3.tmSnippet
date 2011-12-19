@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>== ${1:References} ==
+&lt;references/&gt;
+</string>
+	<key>name</key>
+	<string>Insert References list (bib)</string>
+	<key>scope</key>
+	<string>text.html.mediawiki</string>
+	<key>tabTrigger</key>
+	<string>bib</string>
+	<key>uuid</key>
+	<string>348FDDDD-FE36-487B-ABFD-7FE322A0DA93</string>
+</dict>
+</plist>
