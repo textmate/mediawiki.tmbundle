@@ -8,6 +8,10 @@
 	<string>text.html.mediawiki</string>
 	<key>settings</key>
 	<dict>
+		<key>foldingIndentedBlockIgnore</key>
+		<string>^(?!=+)</string>
+		<key>foldingIndentedBlockStart</key>
+		<string>^=+</string>
 		<key>foldingStartMarker</key>
 		<string>&lt;[^/]|{\|</string>
 		<key>foldingStopMarker</key>
