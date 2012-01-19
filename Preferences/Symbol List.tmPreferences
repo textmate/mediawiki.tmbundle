@@ -5,16 +5,16 @@
 	<key>name</key>
 	<string>Symbol List</string>
 	<key>scope</key>
-	<string>text.html.mediawiki markup.heading.mediawiki</string>
+	<string>text.html.mediawiki markup.heading</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>
 		<integer>1</integer>
 		<key>symbolTransformation</key>
 		<string>
-		s/\s*=*\s*$//;				# strip trailing space and =
-		# s/(?&lt;==)=/ /g;			# change all but first = to m-space
-		s/^=( *)\s+(.*)/$1$2/;		# strip first = and space before title
+		s/\s*=+\s*$//;                # strip trailing space and =
+		s/(?&lt;==)=/ /g;                # use look behind to change all but first = to space
+		s/^(=)( *)\s?(.*)/ $2$3/;    # make the first = a space
 	</string>
 	</dict>
 	<key>uuid</key>
