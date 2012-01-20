@@ -5,7 +5,6 @@
 	<key>comment</key>
 	<string>
 		TODO: language
-		
 		 1. Add a bunch of HTML tags.  See the #block and #style sections.
 		 3. Correctly scope all the parser functions and their contents.
 		    This on will be complicated, as there are several: expr, if, etc.
@@ -158,21 +157,87 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>^(=+)(?=.*\1\s*$)</string>
+					<string>^(={1})(?!=)(?=.*\1\s*$)</string>
 					<key>comment</key>
-					<string>
-						This matches lines which begin and end with  “=” marks.
-						Mismatched “=” marks marked invalid.
-				    </string>
+					<string>Match lines that begin &amp; end with  1 “=”: Mismatch "=" marked invalid.</string>
 					<key>end</key>
 					<string>\1\s*$\n?</string>
 					<key>name</key>
-					<string>markup.heading.mediawiki</string>
+					<string>markup.heading.1.mediawiki</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>match</key>
-							<string>(?&lt;=^=|^==|^===|^====|^=====|^======)=+|=(?==*\s*$)</string>
+							<string>={1}(=+\s*$)</string>
+							<key>name</key>
+							<string>invalid.illegal.extra-equals-sign.mediawiki</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#inline</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>^(={2})(?!=)(?=.*\1\s*$)</string>
+					<key>comment</key>
+					<string>Match next heading</string>
+					<key>end</key>
+					<string>\1\s*$\n?</string>
+					<key>name</key>
+					<string>markup.heading.2.mediawiki</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>={2}(=+\s*$)</string>
+							<key>name</key>
+							<string>invalid.illegal.extra-equals-sign.mediawiki</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#inline</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>^(={3})(?!=)(?=.*\1\s*$)</string>
+					<key>comment</key>
+					<string>Match next heading</string>
+					<key>end</key>
+					<string>\1\s*$\n?</string>
+					<key>name</key>
+					<string>markup.heading.3.mediawiki</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>={3}(=+\s*$)</string>
+							<key>name</key>
+							<string>invalid.illegal.extra-equals-sign.mediawiki</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#inline</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>^(={4})(?!=)(?=.*\1\s*$)</string>
+					<key>comment</key>
+					<string>Match next heading</string>
+					<key>end</key>
+					<string>\1\s*$\n?</string>
+					<key>name</key>
+					<string>markup.heading.4.mediawiki</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>={4}(=+\s*$)</string>
 							<key>name</key>
 							<string>invalid.illegal.extra-equals-sign.mediawiki</string>
 						</dict>
