@@ -13,7 +13,8 @@
 // Also Works on multiple lines and lines that already have a heading applied
 
 $level    = '=';
-$newLevel = str_repeat ( $level, 3); // Change this to alter the level being affected
+$thisNum = 3;
+$newLevel = str_repeat ( $level, $thisNum); // Change this to alter the level being affected
 $o        = array();
 
 if (0) { //set to 1 for debugging
@@ -36,7 +37,7 @@ foreach ($aLines as $key =&gt; $line) {
 		if ($l&gt;1) {
 			$o[] = "";
 		}else{
-			$o[] = "$level \${1:Level 1 heading} $level";
+			$o[] = "$newLevel \${1:Level $thisNum heading} $newLevel";
 		}
 	} else {
 		$new = trim ( $line, " $level" ); //trim existing markers from either end
@@ -44,20 +45,29 @@ foreach ($aLines as $key =&gt; $line) {
 	}
 }
 echo implode("\n", $o);
-?&gt;</string>
+?&gt;
+</string>
 	<key>fallbackInput</key>
 	<string>line</string>
 	<key>input</key>
 	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>@3</string>
 	<key>name</key>
 	<string>h3</string>
-	<key>output</key>
-	<string>insertAsSnippet</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>snippet</string>
+	<key>outputLocation</key>
+	<string>replaceInput</string>
 	<key>scope</key>
 	<string>text.html.mediawiki</string>
 	<key>uuid</key>
 	<string>C15A6AF0-E218-4891-82C3-F0B2BB2FB773</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
