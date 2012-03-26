@@ -43,6 +43,8 @@
 		<string>wikipedia</string>
 		<string>wiki</string>
 	</array>
+	<key>firstLineMatch</key>
+	<string>(^\s*\+{1,}(.*)\s*$)|&lt;\!-- ?mediawiki ?--\&gt;</string>
 	<key>keyEquivalent</key>
 	<string>^~M</string>
 	<key>name</key>
