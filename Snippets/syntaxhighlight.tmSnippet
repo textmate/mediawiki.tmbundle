@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;!-- http://www.mediawiki.org/wiki/Extension:SyntaxHighlight_GeSHi --&gt;
+&lt;syntaxhighlight lang="${1|rsplus,php|}"${2: line="${3|GESHI_NORMAL_LINE_NUMBERS,GESHI_FANCY_LINE_NUMBERS|}" line start="${4:1}" highlight="${5:1}" enclose="${6|pre,div,none|}"}&gt;
+
+&lt;/syntaxhighlight&gt;
+</string>
+	<key>name</key>
+	<string>syntaxhighlight</string>
+	<key>tabTrigger</key>
+	<string>code</string>
+	<key>uuid</key>
+	<string>97042E83-482A-41E0-8044-B8B23457A0BB</string>
+</dict>
+</plist>
