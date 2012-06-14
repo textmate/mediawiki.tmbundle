@@ -485,7 +485,7 @@
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.tag.key.mediawiki</string>
+							<string>entity.name.tag.name.mediawiki</string>
 						</dict>
 						<key>5</key>
 						<dict>
@@ -495,7 +495,7 @@
 						<key>6</key>
 						<dict>
 							<key>name</key>
-							<string>string.quoted.mediawiki</string>
+							<string>string.quoted.ref.name.mediawiki</string>
 						</dict>
 						<key>7</key>
 						<dict>
