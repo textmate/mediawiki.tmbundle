@@ -435,6 +435,8 @@
 							<string>meta.tag.inline.ref.mediawiki</string>
 						</dict>
 					</dict>
+					<key>comment</key>
+					<string>&lt;ref&gt;content&lt;/ref&gt; TODO: Redundant with named tag</string>
 					<key>contentName</key>
 					<string>meta.reference.content.mediawiki</string>
 					<key>end</key>
@@ -457,6 +459,8 @@
 							<string>meta.tag.inline.ref.mediawiki</string>
 						</dict>
 					</dict>
+					<key>name</key>
+					<string>meta.reference.mediawiki</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -464,6 +468,47 @@
 							<string>#inline</string>
 						</dict>
 					</array>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.inline.ref.mediawiki</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.ref.mediawiki</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.name.mediawiki</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.inline.ref.mediawiki</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>string.quoted.ref.name.mediawiki</string>
+						</dict>
+						<key>7</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.inline.ref.mediawiki</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>&lt;ref name="label"/&gt;</string>
+					<key>match</key>
+					<string>(&lt;)(ref) *((name) *(=) *([^&gt;]*))(/&gt;)</string>
+					<key>name</key>
+					<string>meta.reference.named.cite.mediawiki</string>
 				</dict>
 				<dict>
 					<key>begin</key>
