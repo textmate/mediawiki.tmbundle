@@ -5,11 +5,7 @@
 	<key>name</key>
 	<string>Symbol List</string>
 	<key>scope</key>
-<<<<<<< HEAD
-	<string>markup.heading.</string>
-=======
 	<string>text.html.mediawiki markup.heading</string>
->>>>>>> f21c465f1741f2d1d9360b62478d5f371993db19
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>

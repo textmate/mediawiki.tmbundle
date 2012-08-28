@@ -9,15 +9,9 @@
 	<key>settings</key>
 	<dict>
 		<key>foldingIndentedBlockIgnore</key>
-<<<<<<< HEAD
-		<string>^(?!=+)</string>
-		<key>foldingIndentedBlockStart</key>
-		<string>^=+</string>
-=======
 		<string>^(?!=+\s+)</string>
 		<key>foldingIndentedBlockStart</key>
 		<string>^=+\s+</string>
->>>>>>> f21c465f1741f2d1d9360b62478d5f371993db19
 		<key>foldingStartMarker</key>
 		<string>&lt;[^/]|{\|</string>
 		<key>foldingStopMarker</key>
