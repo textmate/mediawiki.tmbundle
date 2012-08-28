@@ -37,7 +37,11 @@ foreach ($aLines as $key =&gt; $line) {
 		if ($l&gt;1) {
 			$o[] = "";
 		}else{
+<<<<<<< HEAD
 			$o[] = "$level \${1:Level $thisNum heading} $level";
+=======
+			$o[] = "$newLevel \${1:Level $thisNum heading} $newLevel";
+>>>>>>> f21c465f1741f2d1d9360b62478d5f371993db19
 		}
 	} else {
 		$new = trim ( $line, " $level" ); //trim existing markers from either end

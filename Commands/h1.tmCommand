@@ -36,7 +36,7 @@ foreach ($aLines as $key =&gt; $line) {
 		if ($l&gt;1) {
 			$o[] = "";
 		}else{
-			$o[] = "$level \${1:Level 1 heading} $level";
+			$o[] = "$newLevel \${1:Level 1 heading} $newLevel";
 		}
 	} else {
 		$new = trim ( $line, " $level" ); //trim existing markers from either end
@@ -49,15 +49,23 @@ echo implode("\n", $o);
 	<string>line</string>
 	<key>input</key>
 	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>@1</string>
 	<key>name</key>
 	<string>h1</string>
-	<key>output</key>
-	<string>insertAsSnippet</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>snippet</string>
+	<key>outputLocation</key>
+	<string>replaceInput</string>
 	<key>scope</key>
 	<string>text.html.mediawiki</string>
 	<key>uuid</key>
 	<string>3A705702-B6CA-4EC8-9DD9-CD5A1C1C819E</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>

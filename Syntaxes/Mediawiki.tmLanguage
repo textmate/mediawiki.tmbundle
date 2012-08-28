@@ -43,8 +43,11 @@
 		<string>wikipedia</string>
 		<string>wiki</string>
 	</array>
+<<<<<<< HEAD
 	<key>firstLineMatch</key>
 	<string>^(={1,5})(?!=)[^=]*(?=\1\s*$)|&lt;\!-- ?mediawiki ?--\&gt;</string>
+=======
+>>>>>>> f21c465f1741f2d1d9360b62478d5f371993db19
 	<key>keyEquivalent</key>
 	<string>^~M</string>
 	<key>name</key>
@@ -158,6 +161,7 @@
 					</array>
 				</dict>
 				<dict>
+<<<<<<< HEAD
 					<key>begin</key>
 					<string>^(={1})(?!=)(?=.*\1\s*$)</string>
 					<key>comment</key>
@@ -240,14 +244,46 @@
 						<dict>
 							<key>match</key>
 							<string>={4}(=+\s*$)</string>
-							<key>name</key>
-							<string>invalid.illegal.extra-equals-sign.mediawiki</string>
-						</dict>
+=======
+					<key>captures</key>
+					<dict>
+						<key>1</key>
 						<dict>
-							<key>include</key>
-							<string>#inline</string>
+>>>>>>> f21c465f1741f2d1d9360b62478d5f371993db19
+							<key>name</key>
+							<string>punctuation.definition.heading.mediawiki</string>
 						</dict>
-					</array>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.section.mediawiki</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>match</key>
+									<string>=+$</string>
+									<key>name</key>
+									<string>invalid.illegal.extra-equals-sign.mediawiki</string>
+								</dict>
+								<dict>
+									<key>include</key>
+									<string>#inline</string>
+								</dict>
+							</array>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.heading.mediawiki</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^(={1,6})(?!=)((.+))(\1)\s*$\n?</string>
+					<key>name</key>
+					<string>markup.heading.${1/=(?&lt;b&gt;=)?(?&lt;c&gt;=)?(?&lt;d&gt;=)?(?&lt;e&gt;=)?(?&lt;f&gt;=)?/${f:?6:${e:?5:${d:?4:${c:?3:${b:?2:1}}}}}/}.mediawiki</string>
 				</dict>
 				<dict>
 					<key>comment</key>
