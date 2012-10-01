@@ -10,6 +10,8 @@
 	<string>Code</string>
 	<key>scope</key>
 	<string>text.html.mediawiki</string>
+	<key>semanticClass</key>
+	<string>style.alternate.raw.mediawiki</string>
 	<key>uuid</key>
 	<string>CD2330E1-14A4-428D-9106-F3C114920E22</string>
 </dict>
