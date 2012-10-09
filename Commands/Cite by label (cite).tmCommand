@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env php
+&lt;?php
+	// build a drop down for user to select citations
+	// Created: october.2012 Author: timothy.c.bates@gmail.com
+
+	if (1) { //set to 0 for debugging
+		$input = fread(STDIN,10000);
+	}else{
+		$input = " '''Niall Campbell Douglas Ferguson''' ({{IPA-en|ˈnaɪlˑ 'fɜrˑgʌˑsən|}}; born 18 April 1964)&lt;ref name = FergBio&gt;[http://www.niallferguson.com/site/FERG/Templates/General2.aspx?pageid=5 Biography] Niall Ferguson&lt;/ref&gt; is a [[Scottish people|Scottish]] [[historian]]. He is the [[Laurence Tisch|Laurence A. Tisch]] [[Professor]] of History at [[Harvard University]]. He is also a Senior Research Fellow of [[Jesus College, Oxford|Jesus College]], [[University of Oxford]] and a Senior Fellow of the [[Hoover Institution]], [[Stanford University]]. His speciality is [[international history]], [[economic history]], particularly hyperinflation and the bond markets, and British and American [[imperialism]].&lt;ref name=FergFacultyPage&gt;http://history.fas.harvard.edu/people/faculty/ferguson.php&lt;/ref&gt;
+
+		Ferguson's books include ''Empire: How Britain Made the Modern World'', ''[[The Ascent of Money: A Financial History of the World]]'' and ''Civilization: The West and the Rest'', all of which he has presented as [[Channel 4]] television series.
+";
+	}
+	$o = array();
+	$lines = explode('
+', $input);
+	foreach ($lines as $key =&gt; $line) {		
+		$pattern = '/\&lt;ref +name *= *([^\&gt; ]+)[ \&gt;]/';
+		$cite = preg_match_all($pattern, $line, $matches);
+		if ($cite) {
+			$o = array_merge($o, $matches[1]);
+		}
+		$matches= array();
+	}
+	$o = '&lt;ref name=${1|' . implode(",", $o) . "|}/&gt;";
+	echo $o; 
+	// &lt;ref name=${1|cite1,cite2,cite3|}/&gt;";
+?&gt;
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>name</key>
+	<string>Cite Reference [((bibcite label))]</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>snippet</string>
+	<key>outputLocation</key>
+	<string>atCaret</string>
+	<key>scope</key>
+	<string>text.html.mediawiki</string>
+	<key>tabTrigger</key>
+	<string>cite</string>
+	<key>uuid</key>
+	<string>054F815A-0764-4398-B227-57463918E43A</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
