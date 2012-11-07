@@ -461,6 +461,8 @@
 							<string>meta.tag.inline.ref.mediawiki</string>
 						</dict>
 					</dict>
+					<key>name</key>
+					<string>meta.reference.mediawiki</string>
 					<key>patterns</key>
 					<array>
 						<dict>
