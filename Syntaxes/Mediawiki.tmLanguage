@@ -6,36 +6,36 @@
 	<string>
 		TODO: language
 		 1. Add a bunch of HTML tags.  See the #block and #style sections.
-		 3. Correctly scope all the parser functions and their contents.
+		 2. Correctly scope all the parser functions and their contents.
 		    This on will be complicated, as there are several: expr, if, etc.
-		 5. Get some kind of folding by heading (Not possible with TM1 rules).
-		 7. Make sure that illegal things are correctly scoped illegal.
+		 3. Get some kind of folding by heading (Not possible with TM1 rules).
+		 4. Make sure that illegal things are correctly scoped illegal.
 		    This is non-trivial, and has several parts
-		      - Bold/italic are based on brain-dead heuristics.  Also, we should
-		        scope as illegal when for instance a new heading starts
-		        before an italic has been closed.
-		      - Templates... these will be pretty tough as they are flexible.
-		 9. &lt;timeline&gt;&lt;/timeline&gt; tag.  Not sure this one is worth the effort
+		    - Bold/italic are based on brain-dead heuristics.  Also, we should
+		      scope as illegal when for instance a new heading starts
+		      before an italic has been closed.
+		    - Templates... these will be pretty tough as they are flexible.
+		 5. &lt;timeline&gt;&lt;/timeline&gt; tag.  Not sure this one is worth the effort
 
-		10. Figure out a better scope for meta.function-call.  Infininight
+		 6. Figure out a better scope for meta.function-call.  Infininight
 		    suggests entity.name.function.call, to be paralleled by
-		    entity.name.function.definition.  I am not completly sure I like
+		    entity.name.function.definition.  I am not completely sure I like
 		    that solution, but it is probably better than meta.function-call
 
-		TODO snippents and commands
-		 2. Add a drop command (and keyboard shortcuts) for links/images
-		 3. Make sure all the preference items are sorted out, for instance
-		    smart typing pairs, indent patterns, etc.
-		 4. Command: big/small
+		TODO snippets and commands
+		 1. Add a drop command (and keyboard shortcuts) for links/images
+		 2. Make sure all the preference items are sorted out, for instance
+		 smart typing pairs, indent patterns, etc.
+		 3. Command: big/small
 		
 		FINISHED:
-		 2. Add support for LaTeX math mode inside of &lt;math&gt;&lt;/math&gt; tags.
-		 1. Add a command for new list item.  This one is trivial
-		 6. Get the symbol list working on headings.  Trivial.
-		 8. &lt;gallery&gt;&lt;/gallery&gt; tag.  This one adds some complication, but
+		 1. Add support for LaTeX math mode inside of &lt;math&gt;&lt;/math&gt; tags.
+		 2. Add a command for new list item.  This one is trivial
+		 3. Get the symbol list working on headings.  Trivial.
+		 4. &lt;gallery&gt;&lt;/gallery&gt; tag.  This one adds some complication, but
 		    is worth supporting.
-		 4. commands for bold/italic  (tbates)
-		 4. All lists scoped by type of list.  (tbates)
+		 5. commands for bold/italic  (tbates)
+		 6. All lists scoped by type of list.  (tbates)
 	</string>
 	<key>fileTypes</key>
 	<array>
