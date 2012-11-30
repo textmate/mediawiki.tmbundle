@@ -5,7 +5,7 @@
 	<key>bundleUUID</key>
 	<string>64C4222F-7054-4A26-B91E-A82F53166142</string>
 	<key>content</key>
-	<string>&lt;ref name="$1$3"&gt; ${1:Author}${2:,Other Authors}, (${3:Year}). ${4:Title, Source}.&lt;/ref&gt;</string>
+	<string>&lt;ref name="${1/.*\b(\w+)\s*$/$1/}$3"&gt; ${1:Author}${2:,Other Authors}, (${3:Year}). ${4:Title, Source}.&lt;/ref&gt;</string>
 	<key>name</key>
 	<string>Reference &lt;ref&gt;Author (year)...&lt;/ref&gt;</string>
 	<key>scope</key>
