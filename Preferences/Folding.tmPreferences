@@ -13,9 +13,9 @@
 		<key>foldingIndentedBlockStart</key>
 		<string>^=+</string>
 		<key>foldingStartMarker</key>
-		<string>&lt;[^/]|{\|</string>
+		<string>^\{\{[^\}]*$|&lt;(?!/|br)$|{\|(?# fold on tags, pipe, {{)</string>
 		<key>foldingStopMarker</key>
-		<string>&lt;/|\|}</string>
+		<string>\}\}|\|}|&lt;/(?# stop fold on tag close, and } &lt;/)</string>
 	</dict>
 	<key>uuid</key>
 	<string>4A4ECABE-1F4E-4933-8B40-7DF02FD73B6B</string>
