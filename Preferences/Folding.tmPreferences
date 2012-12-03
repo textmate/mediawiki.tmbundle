@@ -11,11 +11,17 @@
 		<key>foldingIndentedBlockIgnore</key>
 		<string>^(?!=+\s+)</string>
 		<key>foldingIndentedBlockStart</key>
-		<string>^=+\s+(?#fold headings)</string>
+		<string>^=+\s+(?# fold headings)</string>
 		<key>foldingStartMarker</key>
+<<<<<<< HEAD
 		<string>^\{\{[^\}]*$|&lt;(?!/|br)$|{\|(?#fold on tags and pipe, as well as unclosed {{)</string>
 		<key>foldingStopMarker</key>
 		<string>\}\}|\|}|&lt;/(?#fold on &lt;/)</string>
+=======
+		<string>^\{\{[^\}]*$|&lt;(?!/|br)$|{\|(?# fold on tags, pipe, {{)</string>
+		<key>foldingStopMarker</key>
+		<string>\}\}|\|}|&lt;/(?# stop fold on tag close, and } &lt;/)</string>
+>>>>>>> 1e52badad8fddb864ab35d70e3f6a587c7191128
 	</dict>
 	<key>uuid</key>
 	<string>4A4ECABE-1F4E-4933-8B40-7DF02FD73B6B</string>
