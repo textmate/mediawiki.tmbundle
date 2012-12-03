@@ -13,9 +13,9 @@
 		<key>foldingIndentedBlockStart</key>
 		<string>^=+\s+(?#fold headings)</string>
 		<key>foldingStartMarker</key>
-		<string>&lt;(?!/)|{\|(?#fold on tags and pipe)</string>
+		<string>^\{\{[^\}]*$|&lt;(?!/|br)$|{\|(?#fold on tags and pipe, as well as unclosed {{)</string>
 		<key>foldingStopMarker</key>
-		<string>&lt;/|\|}(?#fold on &lt;/)</string>
+		<string>\}\}|\|}|&lt;/(?#fold on &lt;/)</string>
 	</dict>
 	<key>uuid</key>
 	<string>4A4ECABE-1F4E-4933-8B40-7DF02FD73B6B</string>
