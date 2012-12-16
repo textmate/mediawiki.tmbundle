@@ -3,12 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>{|
-|${1:row1}
+	<string>{| class="sortable wikitable" style="font-size: 100%; text-align: center;"
+! ${1:col1Name}
+! ${2:col2Name}
+! ${3:col3Name}
 |-
-|${2:row2}
-|}
-</string>
+| ${4:r1 $1} || ${5:r1 $2} || ${6:r1 $3}
+|-
+| ${7:r1 $1} || ${8:r1 $2} || ${9:r1 $3}
+|}</string>
 	<key>name</key>
 	<string>Insert Table</string>
 	<key>scope</key>
