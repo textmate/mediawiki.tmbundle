@@ -7,9 +7,9 @@
 |-
 ||${1:cell}||${2:cell}||</string>
 	<key>keyEquivalent</key>
-	<string>@w</string>
+	<string></string>
 	<key>name</key>
-	<string>table row</string>
+	<string>Insert row</string>
 	<key>scope</key>
 	<string>markup.other.table.row.mediawiki</string>
 	<key>tabTrigger</key>

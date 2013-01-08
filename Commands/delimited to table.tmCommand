@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env php
+&lt;?php
+	// take some tab-seperated text, and return a mediawiki table
+	// Created: december.2012 Author: timothy.c.bates@gmail.com
+
+	if (1) { //set to 0 for debugging
+		$input = fread(STDIN, 1024);
+	} else {
+		$input = "SNP	P value
+rs10507218	.37
+rs1323381	.87
+rs1556876 (proxy for rs10485609)	0.77
+rs1115535 (proxy for rs10485609)	0.94
+rs10505938	0.2100
+rs1160219	1.0000
+rs10495260 (proxy for rs1320490)	0.75";
+
+		// echo "&lt;pre&gt;&lt;br&gt;started with:&lt;br&gt;&lt;font color=red&gt;$input&lt;/font&gt;&lt;br&gt;--&gt;&lt;br&gt;";
+	}
+$o = "{| class=\"sortable wikitable\" style=\"font-size: 90%; text-align: center;\"\n";
+$lines = explode('
+', $input);
+
+// print_r($lines);
+foreach ($lines as $key =&gt; $line) {
+	$bits = explode('	', $line);
+	$o .=  "|-\n|| ". implode(" || ", $bits). "\n";
+}
+echo $o . "|}";
+
+
+// {| class="sortable wikitable" style="font-size: 90%; text-align: center;"
+// |-
+// ||${1:old}||${2:old}||${3:old}
+// |}
+?&gt;
+</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>name</key>
+	<string>Reformat tabbed text to table</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>replaceInput</string>
+	<key>scope</key>
+	<string>text.html.mediawiki, text.html</string>
+	<key>uuid</key>
+	<string>F02C60C7-9978-4FBB-B53D-AE872A05A765</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -4,45 +4,47 @@
 <dict>
 	<key>comment</key>
 	<string>
-		TODO: language
-		 1. Add a bunch of HTML tags.  See the #block and #style sections.
-		 3. Correctly scope all the parser functions and their contents.
-		    This on will be complicated, as there are several: expr, if, etc.
-		 5. Get some kind of folding by heading (Not possible with TM1 rules).
-		 7. Make sure that illegal things are correctly scoped illegal.
-		    This is non-trivial, and has several parts
-		      - Bold/italic are based on brain-dead heuristics.  Also, we should
-		        scope as illegal when for instance a new heading starts
-		        before an italic has been closed.
-		      - Templates... these will be pretty tough as they are flexible.
-		 9. &lt;timeline&gt;&lt;/timeline&gt; tag.  Not sure this one is worth the effort
+			TODO: language
+			1. Add a bunch of HTML tags.  See the #block and #style sections.
+			2. Correctly scope all the parser functions and their contents.
+			   This on will be complicated, as there are several: expr, if, etc.
+			3. Get some kind of folding by heading (Not possible with TM1 rules).
+			4. Make sure that illegal things are correctly scoped illegal.
+			   This is non-trivial, and has several parts
+			   - Bold/italic are based on brain-dead heuristics.  Also, we should
+			     scope as illegal when for instance a new heading starts
+			     before an italic has been closed.
+			   - Templates... these will be pretty tough as they are flexible.
+			5. &lt;timeline&gt;&lt;/timeline&gt; tag.  Not sure this one is worth the effort
 
-		10. Figure out a better scope for meta.function-call.  Infininight
-		    suggests entity.name.function.call, to be paralleled by
-		    entity.name.function.definition.  I am not completly sure I like
-		    that solution, but it is probably better than meta.function-call
+			6. Figure out a better scope for meta.function-call.  Infininight
+			suggests entity.name.function.call, to be paralleled by
+			entity.name.function.definition.  I am not completely sure I like
+			that solution, but it is probably better than meta.function-call
 
-		TODO snippents and commands
-		 2. Add a drop command (and keyboard shortcuts) for links/images
-		 3. Make sure all the preference items are sorted out, for instance
-		    smart typing pairs, indent patterns, etc.
-		 4. Command: big/small
+			TODO snippets and commands
+			1. Add a drop command (and keyboard shortcuts) for links/images
+			2. Make sure all the preference items are sorted out, for instance
+			smart typing pairs, indent patterns, etc.
+			3. Command: big/small
 		
-		FINISHED:
-		 2. Add support for LaTeX math mode inside of &lt;math&gt;&lt;/math&gt; tags.
-		 1. Add a command for new list item.  This one is trivial
-		 6. Get the symbol list working on headings.  Trivial.
-		 8. &lt;gallery&gt;&lt;/gallery&gt; tag.  This one adds some complication, but
-		    is worth supporting.
-		 4. commands for bold/italic  (tbates)
-		 4. All lists scoped by type of list.  (tbates)
-	</string>
+			FINISHED:
+			1. Add support for LaTeX math mode inside of &lt;math&gt;&lt;/math&gt; tags.
+			2. Add a command for new list item.  This one is trivial
+			3. Get the symbol list working on headings.  Trivial.
+			4. &lt;gallery&gt;&lt;/gallery&gt; tag.  This one adds some complication, but
+			   is worth supporting.
+			5. commands for bold/italic  (tbates)
+			6. All lists scoped by type of list.  (tbates)
+		</string>
 	<key>fileTypes</key>
 	<array>
 		<string>mediawiki</string>
 		<string>wikipedia</string>
 		<string>wiki</string>
 	</array>
+	<key>firstLineMatch</key>
+	<string>^(={1,5})(?!=)[^=]*(?=\1\s*$)|&lt;\!-- ?mediawiki ?--\&gt;</string>
 	<key>keyEquivalent</key>
 	<string>^~M</string>
 	<key>name</key>
@@ -156,51 +158,103 @@
 					</array>
 				</dict>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.heading.mediawiki</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.section.mediawiki</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>match</key>
-									<string>=+$</string>
-									<key>name</key>
-									<string>invalid.illegal.extra-equals-sign.mediawiki</string>
-								</dict>
-								<dict>
-									<key>include</key>
-									<string>#inline</string>
-								</dict>
-							</array>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.heading.mediawiki</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>^(={1,6})(?!=)((.+))(\1)\s*$\n?</string>
+					<key>begin</key>
+					<string>^(={1})(?!=)(?=.*\1\s*$)</string>
+					<key>comment</key>
+					<string>Match lines that begin &amp; end with  1 “=”: Mismatch "=" marked invalid.</string>
+					<key>end</key>
+					<string>\1\s*$\n?</string>
 					<key>name</key>
-					<string>markup.heading.${1/=(?&lt;b&gt;=)?(?&lt;c&gt;=)?(?&lt;d&gt;=)?(?&lt;e&gt;=)?(?&lt;f&gt;=)?/${f:?6:${e:?5:${d:?4:${c:?3:${b:?2:1}}}}}/}.mediawiki</string>
+					<string>markup.heading.1.mediawiki</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>={1}(=+\s*$)</string>
+							<key>name</key>
+							<string>invalid.illegal.extra-equals-sign.mediawiki</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#inline</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>^(={2})(?!=)(?=.*\1\s*$)</string>
+					<key>comment</key>
+					<string>Match heading 2</string>
+					<key>end</key>
+					<string>\1\s*$\n?</string>
+					<key>name</key>
+					<string>markup.heading.2.mediawiki</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>={2}(=+\s*$)</string>
+							<key>name</key>
+							<string>invalid.illegal.extra-equals-sign.mediawiki</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#inline</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>^(={3})(?!=)(?=.*\1\s*$)</string>
+					<key>comment</key>
+					<string>Match heading 3</string>
+					<key>end</key>
+					<string>\1\s*$\n?</string>
+					<key>name</key>
+					<string>markup.heading.3.mediawiki</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>={3}(=+\s*$)</string>
+							<key>name</key>
+							<string>invalid.illegal.extra-equals-sign.mediawiki</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#inline</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>^(={4})(?!=)(?=.*\1\s*$)</string>
+					<key>comment</key>
+					<string>Match heading 4</string>
+					<key>end</key>
+					<string>\1\s*$\n?</string>
+					<key>name</key>
+					<string>markup.heading.4.mediawiki</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>={4}(=+\s*$)</string>
+							<key>name</key>
+							<string>invalid.illegal.extra-equals-sign.mediawiki</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#inline</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>comment</key>
 					<string>
-						A separator is made up of 4 or more -s alone on a
-						line by themselves.
-					</string>
+							A separator is made up of 4 or more -s alone on a
+							line by themselves.
+						</string>
 					<key>match</key>
 					<string>^-{4,}[ \t]*($\n)?</string>
 					<key>name</key>
@@ -211,10 +265,10 @@
 					<string>^ (?=\s*\S)</string>
 					<key>comment</key>
 					<string>
-						Code blocks start with one space.  Wiki text and
-						html are still interpreted in MediaWiki, unlike in
-						mediawiki.
-					</string>
+							Code blocks start with one space.  Wiki text and
+							html are still interpreted in MediaWiki, unlike in
+							mediawiki.
+						</string>
 					<key>end</key>
 					<string>^(?=[^ ])</string>
 					<key>name</key>
@@ -232,11 +286,11 @@
 					<string>^([#:;])</string>
 					<key>comment</key>
 					<string>
-						need to scope nested lists
-						  - need to cope with 
-                                definition lists (; :)
-						    indented paragraphs, as used on talk pages (:)
-					</string>
+							need to scope nested lists
+							- need to cope with 
+							definition lists (; :)
+							indented paragraphs, as used on talk pages (:)
+						</string>
 					<key>end</key>
 					<string>^(?!\1)</string>
 					<key>name</key>
@@ -279,9 +333,9 @@
 					<string>^(?![\t ;*#:=]|----|$)</string>
 					<key>comment</key>
 					<string>
-						Anything that is not a code block, list, header, etc.
-						is a paragraph.
-					</string>
+							Anything that is not a code block, list, header, etc.
+							is a paragraph.
+						</string>
 					<key>end</key>
 					<string>^(?:\s*$|(?=[;*#:=]|----))</string>
 					<key>name</key>
@@ -300,14 +354,14 @@
 		<dict>
 			<key>comment</key>
 			<string>
-				The available block HTML tags supported are:
-				  * blockquote, center, pre, div, hr, p
-				  * tables: table, th, tr, td, caption
-				  * lists: ul, ol, li
-				  * definition lists: dl, dt, dd
-				  * headers: h1, h2, h3, h4, h5, h6
-				  * br
-			</string>
+					The available block HTML tags supported are:
+					* blockquote, center, pre, div, hr, p
+					* tables: table, th, tr, td, caption
+					* lists: ul, ol, li
+					* definition lists: dl, dt, dd
+					* headers: h1, h2, h3, h4, h5, h6
+					* br
+				</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -407,6 +461,8 @@
 							<string>meta.tag.inline.ref.mediawiki</string>
 						</dict>
 					</dict>
+					<key>name</key>
+					<string>meta.reference.mediawiki</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -534,12 +590,12 @@
 						<dict>
 							<key>begin</key>
 							<string>(?x)
-								^(?!\s*\n)	          # not an empty line
-								( [ ]*(((i|I)mage)(:))  # spaces, image, colon
-								  ([^\[\]|]+)           # anything
-								  (?&lt;!\s)[ ]*           # spaces
-								)?
-							</string>
+									^(?!\s*\n?)	          # not an empty line
+									( [ ]*(((i|I)mage)(:))  # spaces, image, colon
+									([^\[\]|]+)           # anything
+									(?&lt;!\s)[ ]*           # spaces
+									)?
+								</string>
 							<key>beginCaptures</key>
 							<dict>
 								<key>3</key>
@@ -626,9 +682,9 @@
 		<dict>
 			<key>comment</key>
 			<string>
-				Mediawiki supports Unicode, so these should not usually be
-				necessary, but they do show up on pages from time to time.
-			</string>
+					Mediawiki supports Unicode, so these should not usually be
+					necessary, but they do show up on pages from time to time.
+				</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -709,12 +765,12 @@
 					<integer>1</integer>
 					<key>begin</key>
 					<string>(?x:
-						(\[\[)                         # opening brackets
-						  ( [ ]*(((i|I)mage)(:))       # spaces, image, colon
-						    ([^\[\]|]+)                # anything
-						    (?&lt;!\s)[ ]*                # spaces
-						  )
-					)</string>
+							(\[\[)                         # opening brackets
+							( [ ]*(((i|I)mage)(:))       # spaces, image, colon
+							([^\[\]|]+)                # anything
+							(?&lt;!\s)[ ]*                # spaces
+							)
+							)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -740,9 +796,9 @@
 					</dict>
 					<key>end</key>
 					<string>(?x:
-						  ((\|)[ ]*( [^\[\]|]+ )[ ]*)? # pipe, spaces, anything, spaces
-						(\]\])                         # closing brackets
-					)</string>
+								((\|)[ ]*( [^\[\]|]+ )[ ]*)? # pipe, spaces, anything, spaces
+								(\]\])                         # closing brackets
+								)</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>2</key>
@@ -791,12 +847,12 @@
 							</dict>
 							<key>match</key>
 							<string>(?x)
-								(\|)[ ]*
-								( (thumb|thumbnail|frame)
-								 |(right|left|center|none)
-								 |([0-9]+)(px)
-								)[ ]*
-							</string>
+											(\|)[ ]*
+											( (thumb|thumbnail|frame)
+											|(right|left|center|none)
+											|([0-9]+)(px)
+											)[ ]*
+										</string>
 						</dict>
 						<dict>
 							<key>match</key>
@@ -813,11 +869,11 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x:
-					({{)                       # opening brackets
-						([Rr]edirect|subst:.*)   # redirect?
-						[ ]*                   # spaces
-						(\|)                   # pipe
-					)</string>
+			({{)                       # opening brackets
+			([Rr]edirect|subst:.*)   # redirect?
+			[ ]*                   # spaces
+			(\|)                   # pipe
+			)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -838,10 +894,10 @@
 					</dict>
 					<key>end</key>
 					<string>(?x:
-							(([\|}]+)(\|)([\|}]+))?   #  from | to 
-							([^}]*)                   # anything
-							(}})                      # closing brackets
-					)</string>
+				(([\|}]+)(\|)([\|}]+))?   #  from | to 
+				([^}]*)                   # anything
+				(}})                      # closing brackets
+				)</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>2</key>
@@ -878,13 +934,13 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x:
-						(\[\[)                       # opening brackets
-						  (:)?                       # colon to suppress image or category?
-						  ((\s+):[^\[\]]*(?=\]\]))?  # a colon after spaces is invalid
-						  [ ]*                       # spaces
-						  ( (([^\[\]|]+)(:))?        # namespace
-						    ([^\[\]|]+)(?&lt;!\s)[ ]*   # link name
-						  )?
+					(\[\[)                       # opening brackets
+					(:)?                       # colon to suppress image or category?
+					((\s+):[^\[\]]*(?=\]\]))?  # a colon after spaces is invalid
+					[ ]*                       # spaces
+					( (([^\[\]|]+)(:))?        # namespace
+					([^\[\]|]+)(?&lt;!\s)[ ]*   # link name
+					)?
 					)</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -921,9 +977,9 @@
 					</dict>
 					<key>end</key>
 					<string>(?x:
-						  (\|[ ]*([^\[\]\|]+)[ ]*)?     # pipe, spaces, anything, spaces
+						(\|[ ]*([^\[\]\|]+)[ ]*)?     # pipe, spaces, anything, spaces
 						(\]\])                         # closing brackets
-					)</string>
+						)</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>2</key>
@@ -984,19 +1040,19 @@
 		<dict>
 			<key>comment</key>
 			<string>
-				TODO: Still need to add:
-				  * font
-				  * ruby, rb, rp, rt
-				  * cite
-				inline tags to this section, and make sure that the other
-				tags can accept attributes in the tag opening, etc.  The
-				current implementation is intended to be naive, but covering
-				the majority of uses in mediawiki code.
+					TODO: Still need to add:
+					* font
+					* ruby, rb, rp, rt
+					* cite
+					inline tags to this section, and make sure that the other
+					tags can accept attributes in the tag opening, etc.  The
+					current implementation is intended to be naive, but covering
+					the majority of uses in mediawiki code.
 				
-				We also need to add mediawiki-specific tags:
-				  * nowiki, noinclude, includeonly
+					We also need to add mediawiki-specific tags:
+					* nowiki, noinclude, includeonly
 				
-			</string>
+				</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -1453,8 +1509,8 @@
 		<dict>
 			<key>comment</key>
 			<string>
-				This repository item covers templates and parser functions.
-			</string>
+					This repository item covers templates and parser functions.
+				</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -1503,8 +1559,8 @@
 					</dict>
 					<key>comment</key>
 					<string>
-						Why oh why did mediawiki have to add these??
-					</string>
+							Why oh why did mediawiki have to add these??
+						</string>
 					<key>end</key>
 					<string>(}})</string>
 					<key>endCaptures</key>
