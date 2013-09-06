@@ -3,18 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>
-|-
-||${1:cell}||${2:cell}||</string>
-	<key>keyEquivalent</key>
-	<string></string>
+	<string>#REDIRECT [[${1:Main Page}]]</string>
 	<key>name</key>
-	<string>Insert Row</string>
+	<string>Redirect</string>
 	<key>scope</key>
-	<string>markup.other.table.row.mediawiki</string>
+	<string>text.html.mediawiki</string>
 	<key>tabTrigger</key>
-	<string>un</string>
+	<string>redirect</string>
 	<key>uuid</key>
-	<string>0F9934D8-DE67-4473-A6A8-52540BCC8FEA</string>
+	<string>9A70379A-6602-4FA1-BF92-6E8379CC5B91</string>
 </dict>
 </plist>

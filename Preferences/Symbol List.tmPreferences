@@ -14,7 +14,7 @@
 		<string>
 		s/\s*=+\s*$//;                # strip trailing space and =
 		s/(?&lt;==)=/ /g;                # use look behind to change all but first = to space
-		s/^(=)( *)\s?(.*)/ $2$3/;    # make the first = a space
+		s/^(=)( *)\s?(.*)/ $2$3/;     # make the first = a space
 	</string>
 	</dict>
 	<key>uuid</key>

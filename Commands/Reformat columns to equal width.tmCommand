@@ -130,7 +130,7 @@ echo str_replace("|| ~", "||~ ", $outStr);
 	<key>inputFormat</key>
 	<string>text</string>
 	<key>name</key>
-	<string>Reformat columns to equal width</string>
+	<string>Reformat Columns to Equal Width</string>
 	<key>outputCaret</key>
 	<string>afterOutput</string>
 	<key>outputFormat</key>
