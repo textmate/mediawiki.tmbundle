@@ -22,14 +22,14 @@
 	$lines = explode('
 ', $input);
 	foreach ($lines as $key =&gt; $line) {		
-		$pattern = '/&lt;ref +name *= *([^\/ ]+)(?=&gt;)/';
+		$matches= array();
+		$pattern = '/&lt;ref +name *= *[\"\']([^\/\"\' ]+)(?=[\"\']&gt;)/';
 		$cite = preg_match_all($pattern, $line, $matches);
 		if ($cite) {
 			$o = array_merge($o, $matches[1]);
 		}
-		$matches= array();
 	}
-	$o = '&lt;ref name=${1|' . implode(",", $o) . "|}/&gt;";
+	$o = '&lt;ref name="${1|' . implode(',', $o) . '|}"/&gt;';
 	echo $o; 
 	// generates a snippet like this: &lt;ref name=${1|cite1,cite2,cite3|}/&gt;";
 ?&gt;
