@@ -2,18 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>bundleUUID</key>
-	<string>64C4222F-7054-4A26-B91E-A82F53166142</string>
 	<key>content</key>
-	<string>== ${1:References} ==
-&lt;references/&gt;</string>
+	<string>&lt;syntaxhighlight lang="${1|rsplus|}"&gt;
+	$0
+&lt;/syntaxhighlight&gt;
+</string>
 	<key>name</key>
-	<string>Insert References list (bib)</string>
+	<string>code (syntaxhighlight)</string>
 	<key>scope</key>
 	<string>text.html.mediawiki</string>
 	<key>tabTrigger</key>
-	<string>bib</string>
+	<string>code</string>
 	<key>uuid</key>
-	<string>4D701709-0454-4A0A-9FB7-8D8D48C5A94D</string>
+	<string>8D30E920-3BE9-48CB-8FD4-731DCDE09BA8</string>
 </dict>
 </plist>

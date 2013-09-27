@@ -9,9 +9,9 @@
 	<key>settings</key>
 	<dict>
 		<key>foldingIndentedBlockIgnore</key>
-		<string>^(?!=+)</string>
+		<string>^(?!=+\s+)</string>
 		<key>foldingIndentedBlockStart</key>
-		<string>^=+</string>
+		<string>^=+\s+(?# fold headings)</string>
 		<key>foldingStartMarker</key>
 		<string>^\{\{[^\}]*$|&lt;(?!/|br)$|{\|(?# fold on tags, pipe, {{)</string>
 		<key>foldingStopMarker</key>

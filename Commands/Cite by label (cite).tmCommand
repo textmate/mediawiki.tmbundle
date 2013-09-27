@@ -11,7 +11,7 @@
 	// Created: october.2012 Author: timothy.c.bates@gmail.com
 
 	if (1) { //set to 0 for debugging
-		$input = fread(STDIN,10000);
+		$input = file_get_contents("php://stdin", "r");
 	}else{
 		$input = " '''Niall Campbell Douglas Ferguson''' ({{IPA-en|ˈnaɪlˑ 'fɜrˑgʌˑsən|}}; born 18 April 1964)&lt;ref name = FergBio&gt;[http://www.niallferguson.com/site/FERG/Templates/General2.aspx?pageid=5 Biography] Niall Ferguson&lt;/ref&gt; is a [[Scottish people|Scottish]] [[historian]]. He is the [[Laurence Tisch|Laurence A. Tisch]] [[Professor]] of History at [[Harvard University]]. He is also a Senior Research Fellow of [[Jesus College, Oxford|Jesus College]], [[University of Oxford]] and a Senior Fellow of the [[Hoover Institution]], [[Stanford University]]. His speciality is [[international history]], [[economic history]], particularly hyperinflation and the bond markets, and British and American [[imperialism]].&lt;ref name=FergFacultyPage&gt;http://history.fas.harvard.edu/people/faculty/ferguson.php&lt;/ref&gt;
 
@@ -22,16 +22,16 @@
 	$lines = explode('
 ', $input);
 	foreach ($lines as $key =&gt; $line) {		
-		$pattern = '/\&lt;ref +name *= *([^\&gt; ]+)[ \&gt;]/';
+		$matches= array();
+		$pattern = '/&lt;ref +name *= *[\"\']([^\/\"\' ]+)(?=[\"\']&gt;)/';
 		$cite = preg_match_all($pattern, $line, $matches);
 		if ($cite) {
 			$o = array_merge($o, $matches[1]);
 		}
-		$matches= array();
 	}
-	$o = '&lt;ref name=${1|' . implode(",", $o) . "|}/&gt;";
+	$o = '&lt;ref name="${1|' . implode(',', $o) . '|}"/&gt;';
 	echo $o; 
-	// &lt;ref name=${1|cite1,cite2,cite3|}/&gt;";
+	// generates a snippet like this: &lt;ref name=${1|cite1,cite2,cite3|}/&gt;";
 ?&gt;
 </string>
 	<key>input</key>

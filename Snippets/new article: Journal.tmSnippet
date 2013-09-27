@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>{{Infobox journal
+| title        = ${1:THETITLE}
+| abbreviation = $1
+| cover        = [[image:${2:$1.gif}]]
+| editor       = ${3:Editor}
+| discipline   = [[${4:THEDISCIPLINE}]]
+| frequency    = ${5:monthly}
+| history      = 
+| website      = ${6:THEURL}
+| country      = [[]]
+| publisher    = [[${7:THEPUBLISHER}]]
+| impact       = ${8:THEIMPACT}
+| impact-year  = ${9:2012}
+| ISSN         = THEISSN
+| eISSN        = THEEISSN
+| OCLC         = 
+| license      = 
+| website      = 
+| link1        = 
+| link1-name   = 
+| link2        =
+| link2-name   =
+| JSTOR        =
+| LCCN         = 
+| CODEN        =
+}}
+
+'''$1''' is a [[journal]] covering [[$4]] published by [[$7]].
+
+The editor-in-Chief is [[$3]] and the journal is the official journal of [[THESOCIETY]]. 
+
+$1 publishes research on THESTATEMENT.
+
+According to the $9 [[Journal Citation Reports]], its [[impact factor]] is  $8. It is abstracted in many of the leading abstracting services including [[Pubmed]], and [[Web of Science]].
+
+== External Links ==
+* [$6 Online Content]
+
+== References ==
+&lt;references/&gt;
+
+[[Category:English-language journals]]
+[[Category:$5 academic journals]]
+[[Category:$3]]
+[[Category:]]
+
+{{sci-journal-stub}}
+$2
+{{Non-free use rationale
+ |Article           = $1
+ |Description       = cover
+ |Source            = $6
+ |Portion           = cover
+ |Low_resolution    = yes
+ |Purpose           = illustrate article on this journal
+ |Replaceability    = none
+ |other_information = 
+}}
+</string>
+	<key>name</key>
+	<string>new article: Journal</string>
+	<key>scope</key>
+	<string>text.html.mediawiki</string>
+	<key>uuid</key>
+	<string>83394209-B1B2-4B4A-A0FF-998E2D306A9F</string>
+</dict>
+</plist>
