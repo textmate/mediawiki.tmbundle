@@ -40,11 +40,11 @@
 			<dict>
 				<key>items</key>
 				<array>
-					<string>3A705702-B6CA-4EC8-9DD9-CD5A1C1C819E</string>
-					<string>14B77304-879C-4479-99AF-214D3222ECCC</string>
-					<string>C15A6AF0-E218-4891-82C3-F0B2BB2FB773</string>
-					<string>C77B0111-D741-40E8-BC04-160C6277FE5D</string>
-					<string>184223B3-EBEF-4172-B7A8-EA53FEDE2996</string>
+					<string>A9BA7C12-8A03-40A5-9C0A-66BD66CA0E78</string>
+					<string>C7713023-5FF9-4200-8340-3542358A64F8</string>
+					<string>AC7DCA0B-7E2A-4FDA-80B7-C70E94A828F5</string>
+					<string>EF9324E4-D4DF-45EE-A21D-3182BEA323BD</string>
+					<string>0FBF756C-651C-4AFC-92A2-9E229F5E3775</string>
 				</array>
 				<key>name</key>
 				<string>Headings</string>
@@ -95,26 +95,13 @@
 					<string>DADDBEEB-4411-4561-B091-1019382BFAB9</string>
 					<string>F36B4588-8104-4A78-8821-188468DB406D</string>					
 					<string>------------------------------------</string>
-					<string>4D701709-0454-4A0A-9FB7-8D8D48C5A94D</string>
+					<string>95BA5BBC-AFF7-4776-BC90-E7344B4A1DF4</string>
 					<string>------------------------------------</string>
 					<string>2D48FEFB-131B-42CE-9BA5-F478CDE6B4AD</string>
 					<string>82818008-054C-451E-85F1-DD433AE697F0</string>
 				</array>
 				<key>name</key>
 				<string>References</string>
-			</dict>
-			<key>BC429D06-7D1B-4C92-B0D2-AAF922E3868C</key>
-			<dict>
-				<key>items</key>
-				<array>
-					<string>3A705702-B6CA-4EC8-9DD9-CD5A1C1C819E</string>
-					<string>14B77304-879C-4479-99AF-214D3222ECCC</string>
-					<string>C15A6AF0-E218-4891-82C3-F0B2BB2FB773</string>
-					<string>C77B0111-D741-40E8-BC04-160C6277FE5D</string>
-					<string>184223B3-EBEF-4172-B7A8-EA53FEDE2996</string>
-				</array>
-				<key>name</key>
-				<string>Document Structure</string>
 			</dict>
 		</dict>
 	</dict>

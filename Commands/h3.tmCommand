@@ -66,7 +66,7 @@ echo implode("\n", $o);
 	<key>scope</key>
 	<string>text.html.mediawiki</string>
 	<key>uuid</key>
-	<string>C15A6AF0-E218-4891-82C3-F0B2BB2FB773</string>
+	<string>AC7DCA0B-7E2A-4FDA-80B7-C70E94A828F5</string>
 	<key>version</key>
 	<integer>2</integer>
 </dict>
