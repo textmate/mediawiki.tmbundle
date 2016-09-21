@@ -341,7 +341,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>text.tex.math</string>
+							<string>text.tex#math</string>
 						</dict>
 					</array>
 				</dict>
@@ -358,7 +358,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>text.html</string>
+							<string>text.html.basic</string>
 						</dict>
 					</array>
 				</dict>
