@@ -147,13 +147,6 @@
 					</dict>
 					<key>name</key>
 					<string>meta.tag.source.mediawiki</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#tag-stuff</string>
-						</dict>
-					</array>
 				</dict>
 				<dict>
 					<key>captures</key>
