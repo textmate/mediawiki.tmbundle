@@ -92,6 +92,11 @@
 					<string> ?(&lt;)(source)[ \t]+(lang)(=)("[^"]+")(&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.source.mediawiki</string>
+						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
@@ -129,6 +134,11 @@
 					<string> ?(&lt;/)(source)(&gt;)</string>
 					<key>endCaptures</key>
 					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.source.mediawiki</string>
+						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
@@ -145,8 +155,6 @@
 							<string>punctuation.definition.tag.mediawiki</string>
 						</dict>
 					</dict>
-					<key>name</key>
-					<string>meta.tag.source.mediawiki</string>
 				</dict>
 				<dict>
 					<key>captures</key>
