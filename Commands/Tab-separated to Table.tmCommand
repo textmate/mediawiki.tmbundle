@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>#!/usr/bin/env php
 &lt;?php
-	// take some tab-seperated text, and return a mediawiki table
+	// take some tab-separated text, and return a mediawiki table
 	// Created: december.2012 Author: timothy.c.bates@gmail.com
 
 	if (1) { //set to 0 for debugging
